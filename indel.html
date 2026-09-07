@@ -29,15 +29,15 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      max-width: 2000px; /* Adjust maximum container width if needed */
-      gap: 0px; /* Keeps images flush against each other without gaps */
+      max-width: 2000px;
+      gap: 0px; /* Ensures no gap between images */
     }
 
-    /* Individual image card (1:1 ratio) */
+    /* Individual image card (1:1 aspect ratio) */
     .image-card {
       position: relative;
-      flex: 1 1 0%; /* Forces equal 50% width distribution */
-      aspect-ratio: 1 / 1; /* Keeps 1000x1000 square aspect ratio */
+      flex: 1 1 0%; /* Forces equal width distribution */
+      aspect-ratio: 1 / 1; /* Maintains 1000x1000 square ratio */
       overflow: hidden;
       cursor: pointer;
     }
@@ -50,7 +50,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.3s ease-in-out; /* Smooth hover swap transition */
+      transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
     }
 
     /* Base state image */
@@ -79,16 +79,16 @@
 
   <div class="gallery-container">
     
-    <!-- Left Image -->
+    <!-- Left Image: Motion -->
     <div class="image-card">
-      <img src="img1-default.jpg" alt="Image 1" class="img-default">
-      <img src="img1-hover.jpg" alt="Image 1 Hover" class="img-hover">
+      <img src="Welcome_Page_Motion_NORM.png" alt="Motion" class="img-default">
+      <img src="Welcome_Page_Motion_OVER.png" alt="Motion Hover" class="img-hover">
     </div>
 
-    <!-- Right Image -->
+    <!-- Right Image: Concept -->
     <div class="image-card">
-      <img src="img2-default.jpg" alt="Image 2" class="img-default">
-      <img src="img2-hover.jpg" alt="Image 2 Hover" class="img-hover">
+      <img src="Welcome_Page_Concept_NORM.png" alt="Concept" class="img-default">
+      <img src="Welcome_Page_Concept_OVER.png" alt="Concept Hover" class="img-hover">
     </div>
 
   </div>
