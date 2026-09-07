@@ -13,7 +13,7 @@
     }
 
     body {
-      background-color: transparent;
+      background-color: #e5e5e5; /* Updated background color */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -30,19 +30,21 @@
       align-items: center;
       width: 100%;
       max-width: 2000px;
-      gap: 0px; /* Ensures no gap between images */
+      gap: 0px; /* Zero gap between images */
+      background-color: #e5e5e5;
     }
 
-    /* Individual image card (1:1 aspect ratio) */
+    /* Individual image card (1:1 ratio) */
     .image-card {
       position: relative;
-      flex: 1 1 0%; /* Forces equal width distribution */
-      aspect-ratio: 1 / 1; /* Maintains 1000x1000 square ratio */
+      flex: 1 1 0%;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       cursor: pointer;
+      background-color: #e5e5e5;
     }
 
-    /* Image layer positioning */
+    /* Image positioning */
     .image-card img {
       position: absolute;
       top: 0;
@@ -50,28 +52,24 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
     }
 
-    /* Base state image */
+    /* Base image stays solid underneath (prevents flash) */
     .image-card .img-default {
       opacity: 1;
       z-index: 1;
     }
 
-    /* Mouseover rollover image */
+    /* Rollover image sits on top and smoothly fades in */
     .image-card .img-hover {
       opacity: 0;
       z-index: 2;
+      transition: opacity 0.25s ease-in-out; /* Smooth fade overlay */
     }
 
-    /* Hover trigger states */
+    /* Only transition the top hover image */
     .image-card:hover .img-hover {
       opacity: 1;
-    }
-
-    .image-card:hover .img-default {
-      opacity: 0;
     }
   </style>
 </head>
