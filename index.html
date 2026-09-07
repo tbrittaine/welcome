@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Rollover Gallery</title>
+  <style>
+    /* Reset margins & padding */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Outer horizontal layout container */
+    .gallery-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 2000px;
+      gap: 0px; /* Ensures no gap between images */
+    }
+
+    /* Individual image card (1:1 aspect ratio) */
+    .image-card {
+      position: relative;
+      flex: 1 1 0%; /* Forces equal width distribution */
+      aspect-ratio: 1 / 1; /* Maintains 1000x1000 square ratio */
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Image layer positioning */
+    .image-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+    }
+
+    /* Base state image */
+    .image-card .img-default {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* Mouseover rollover image */
+    .image-card .img-hover {
+      opacity: 0;
+      z-index: 2;
+    }
+
+    /* Hover trigger states */
+    .image-card:hover .img-hover {
+      opacity: 1;
+    }
+
+    .image-card:hover .img-default {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gallery-container">
+    
+    <!-- Left Image: Motion -->
+    <div class="image-card">
+      <img src="Welcome_Page_Motion_NORM.png" alt="Motion" class="img-default">
+      <img src="Welcome_Page_Motion_OVER.png" alt="Motion Hover" class="img-hover">
+    </div>
+
+    <!-- Right Image: Concept -->
+    <div class="image-card">
+      <img src="Welcome_Page_Concept_NORM.png" alt="Concept" class="img-default">
+      <img src="Welcome_Page_Concept_OVER.png" alt="Concept Hover" class="img-hover">
+    </div>
+
+  </div>
+
+</body>
+</html>
